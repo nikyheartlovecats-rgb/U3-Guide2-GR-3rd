@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colegio Montano - Grade 3 Grammar Study Guide</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700&display=swap');
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #F2F5E9;
+        }
+        /* Custom brand styling */
+        .brand-header-bg { background-color: #1269A8; }
+        .brand-border { border-color: #F7D615; }
+        .brand-accent-bg { background-color: #F7D615; }
+        .brand-accent-text { color: #1269A8; }
+        .brand-secondary { color: #54887D; }
+        .brand-card-bg { background-color: #88B5C7; }
+        .brand-tag-bg { background-color: #A6B046; }
+        .brand-canvas-bg { background-color: #F2F5E9; }
+
+        /* Custom scrollbar for whiteboard content */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F2F5E9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #88B5C7;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="p-4 md:p-6 min-h-screen flex flex-col justify-center items-center">
+
+    <!-- Whiteboard Frame Container -->
+    <div id="whiteboardContainer" class="w-full max-w-6xl brand-canvas-bg rounded-xl border-4 brand-border shadow-2xl overflow-hidden flex flex-col transition-all duration-300">
+        
+        <!-- Header with Logo and Fullscreen Button -->
+        <header class="brand-header-bg text-white px-6 py-4 flex flex-col sm:flex-row justify-between items-center gap-4 border-b-4 brand-border">
+            <div class="flex items-center gap-4">
+                <!-- Institutional Logo -->
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyEop0yf6lZ7Jk9MILZxF1rBj4Oqs5esyhIQ&s" alt="Colegio Montano Logo" class="h-12 w-12 rounded-full object-cover border-2 border-white shadow-md bg-white p-0.5" onerror="this.src='https://placehold.co/100x100/1269A8/FFFFFF?text=CM'">
+                <div>
+                    <h1 class="text-xl sm:text-2xl font-bold tracking-wide">COLEGIO MONTANO</h1>
+                    <p class="text-xs sm:text-sm text-yellow-200 font-medium">Interactive Digital Whiteboard • Grade 3 English • Our World 3 (Unit 3)</p>
+                </div>
+            </div>
+            
+            <!-- Fullscreen Toggle Button -->
+            <button onclick="toggleFullScreen()" class="brand-accent-bg brand-accent-text font-bold px-4 py-2 rounded-lg shadow hover:opacity-90 active:scale-95 transition flex items-center gap-2 text-sm">
+                <span>[ ⛶ Fullscreen ]</span>
+            </button>
+        </header>
+
+        <!-- Horizontal Tab Navigation -->
+        <nav class="bg-sky-900 px-4 py-2 flex flex-wrap gap-2 justify-center sm:justify-start border-b border-sky-800">
+            <button onclick="switchTab('theory')" id="btn-theory" class="tab-btn px-4 py-2 rounded-lg font-semibold text-sm transition bg-white text-sky-900 shadow">
+                📚 Theory
+            </button>
+            <button onclick="switchTab('examples')" id="btn-examples" class="tab-btn px-4 py-2 rounded-lg font-semibold text-sm transition text-white hover:bg-sky-800">
+                💡 Examples
+            </button>
+            <button onclick="switchTab('exercises')" id="btn-exercises" class="tab-btn px-4 py-2 rounded-lg font-semibold text-sm transition text-white hover:bg-sky-800">
+                ✍️ Exercises
+            </button>
+            <button onclick="switchTab('reflection')" id="btn-reflection" class="tab-btn px-4 py-2 rounded-lg font-semibold text-sm transition text-white hover:bg-sky-800">
+                🤔 Critical Reflection
+            </button>
+            <button onclick="switchTab('evaluation')" id="btn-evaluation" class="tab-btn px-4 py-2 rounded-lg font-semibold text-sm transition text-white hover:bg-sky-800">
+                📝 Formative Quiz
+            </button>
+        </nav>
+
+        <!-- Main Whiteboard Canvas Content Area -->
+        <main class="p-6 overflow-y-auto max-h-[70vh]">
+            
+            <!-- TAB 1: THEORY -->
+            <section id="tab-theory" class="tab-content space-y-6">
+                <div class="bg-white p-6 rounded-xl shadow-md border-l-8 border-[#1269A8]">
+                    <h2 class="text-2xl font-bold text-[#1269A8] mb-3">Unit 3 Grammar Overview</h2>
+                    <p class="text-gray-700 leading-relaxed">
+                        Welcome to Grade 3 English! In Unit 3, we explore two core grammar structures: 
+                        <strong>Grammar 1 (Simple Past: Yes/No Questions & Short Answers)</strong> and 
+                        <strong>Grammar 2 (Quantifiers: <i>too</i>, <i>too much</i>, <i>too many</i>, and <i>enough</i>)</strong>. Let's review the rules below like a classroom whiteboard!
+                    </p>
+                </div>
+
+                <!-- Grammar 1 Card -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-[#88B5C7] bg-opacity-30 p-6 rounded-xl border-2 border-[#54887D] shadow-sm">
+                        <span class="inline-block brand-tag-bg text-white text-xs px-2.5 py-1 rounded-full font-bold mb-2">Grammar 1</span>
+                        <h3 class="text-xl font-bold text-[#1269A8] mb-3">Simple Past: Yes/No Questions</h3>
+                        <p class="text-gray-800 text-sm mb-4">We use <strong>Did</strong> + subject + base verb to ask about completed actions in the past.</p>
+                        
+                        <div class="bg-white p-4 rounded-lg shadow-inner text-sm space-y-2 font-mono">
+                            <div class="bg-sky-100 p-2 rounded"><strong>Question:</strong> Did + [you / he / she / they] + [brush / make / do] + ...?</div>
+                            <div class="bg-emerald-100 p-2 rounded"><strong>Affirmative Answer:</strong> Yes, [I / he / she / they] + <strong>did</strong>.</div>
+                            <div class="bg-rose-100 p-2 rounded"><strong>Negative Answer:</strong> No, [I / he / she / they] + <strong>didn't</strong>.</div>
+                        </div>
+                    </div>
+
+                    <!-- Grammar 2 Card -->
+                    <div class="bg-[#88B5C7] bg-opacity-30 p-6 rounded-xl border-2 border-[#54887D] shadow-sm">
+                        <span class="inline-block brand-tag-bg text-white text-xs px-2.5 py-1 rounded-full font-bold mb-2">Grammar 2</span>
+                        <h3 class="text-xl font-bold text-[#1269A8] mb-3">Quantifiers: too, too much, too many, enough</h3>
+                        <p class="text-gray-800 text-sm mb-4">Expressing amounts and limits in daily habits and routines.</p>
+                        
+                        <div class="bg-white p-4 rounded-lg shadow-inner text-sm space-y-2">
+                            <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                                <li><strong>too + adjective:</strong> Don't stay up <i>too late</i>!</li>
+                                <li><strong>too much + uncountable noun:</strong> Eat <i>too much junk food</i>.</li>
+                                <li><strong>too many + countable noun:</strong> Play <i>too many video games</i>.</li>
+                                <li><strong>enough + noun / verb + enough:</strong> Get <i>enough sleep</i> / get <i>enough exercise</i>.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TAB 2: EXAMPLES -->
+            <section id="tab-examples" class="tab-content hidden space-y-6">
+                <div class="bg-white p-6 rounded-xl shadow-md border-l-8 border-[#A6B046]">
+                    <h2 class="text-2xl font-bold text-[#1269A8] mb-2">Resolved Examples (15 Total: 5 Basic, 5 Intermediate, 5 Advanced)</h2>
+                    <p class="text-gray-600 text-sm">Study these step-by-step examples designed for Third Grade students following National Geographic's Our World 3 curriculum.</p>
+                </div>
+
+                <!-- LEVEL CATEGORY: BASIC -->
+                <div class="space-y-4">
+                    <h3 class="text-lg font-bold text-[#54887D] border-b-2 border-[#54887D] pb-1">⭐ Basic Level Examples (1 - 5)</h3>
+                    
+                    <div class="bg-white p-4 rounded-lg shadow border border-sky-200">
+                        <p class="font-semibold text-[#1269A8]">Example 1 (Grammar 1): Asking about brushing teeth.</p>
+                        <p class="text-sm text-gray-700 mt-1"><strong>Prompt:</strong> <i>Did you brush your teeth?</i></p>
+                        <div class="mt-2 p-3 bg-gray-50 rounded text-sm text-gray-800 border-l-4 border-emerald-500">
+                            <strong>Step-by-step Solution:</strong> Identify subject ("you") and base verb ("brush"). Answer affirmatively: <strong>Yes, I did.</strong>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-4 rounded-lg shadow border border-sky-200">
+                        <p class="font-semibold text-[#1269A8]">Example 2 (Grammar 1): Asking about making a bed.</p>
+                        <p class="text-sm text-gray-700 mt-1"><strong>Prompt:</strong> <i>Did he make his bed? (Negative)</i></p>
+                        <div class="mt-2 p-3 bg-gray-50 rounded text-sm text-gray-800 border-l-4 border-emerald-500">
+                            <strong>Step-by-step Solution:</strong> Subject is "he". For a negative response, use "didn't". Answer: <strong>No, he didn't.</strong>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-4 rounded-lg shadow border border-sky-200">
+                        <p class="font-semibold text-[#1269A8]">Example 3 (Grammar 1): Asking about homework.</p>
+                        <p class="text-sm text-gray-700 mt-1"><strong>Prompt:</strong> <i>Did they do their homework? (Affirmative)</i></p>
+                        <div class="mt-2 p-3 bg-gray-50 rounded text-sm text-gray-800 border-l-4 border-emerald-500">
+                            <strong>Step-by-step Solution:</strong> Subject is "they". Affirmative response uses "did". Answer: <strong>Yes, they did.</strong>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-4 rounded-lg shadow border border-sky-200">
+                        <p class="font-semibold text-[#1269A8]">Example 4 (Grammar 2): Using "too late".</p>
+                        <p class="text-sm text-gray-700 mt-1"><strong>Prompt:</strong> <i>Don't stay up ______ late! (too / enough)</i></p>
+                        <div class="mt-2 p-3 bg-gray-50 rounded text-sm text-gray-800 border-l-4 border-emerald-500">
+                            <strong>Step-by-step Solution:</strong> Before an adjective ("late") indicating excess, we use <strong>too</strong>. Answer: <strong>too</strong>.
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-4 rounded-lg shadow border border-sky-200">
+                        <p class="font-semibold text-[#1269A8]">Example 5 (Grammar 2): Using "exercise".</p>
+                        <p class="text-sm text-gray-700 mt-1"><strong>Prompt:</strong> <i>I play soccer every day. I get ______ exercise. (too / enough)</i></p>
+                        <div class="mt-2 p-3 bg-gray-50 rounded text-sm text-gray-800 border-l-4 border-emerald-500">
+                            <strong>Step-by-step Solution:</strong> Positive habit with adequate quantity uses <strong>enough</strong> before the noun. Answer: <strong>enough</strong>.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LEVEL CATEGORY: INTERMEDIATE -->
+                <div class="space-y-4 pt-4">
+                    <h3 class="text-lg font-bold text-[#54887D] border-b-2 border-[#54887D] pb-1">⭐⭐ Intermediate Level Examples (6 - 10)</h3>
+                    
+                    <div class="bg-white p-4 rounded-lg shadow border border-sky-200">
+                        <p class="font-semibold text-[#1269A8]">Example 6 (Grammar 1): Formulating Past Questions.</p>
+                        <p class="text-sm text-gray-700 mt-1"><strong>Prompt:</strong> Formulate question: <i>she / walk / to school?</i></p>
+                        <div class="mt-2 p-3 bg-gray-50 rounded text-sm text-gray-800 border-l-4 border-emerald-500">
+                            <strong>Step-by-step Solution:</strong> Start with auxiliary "Did" + subject "she" + base verb "walk" + complement "to school?". Answer: <strong>Did she walk to school?</strong>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-4 rounded-lg shadow border border-sky-200">
+                        <p class="font-semibold text-[#1269A8]">Example 7 (Grammar 1): Past question with time marker.</p>
+                        <p class="text-sm text-gray-700 mt-1"><strong>Prompt:</strong> Formulate question: <i>you / play baseball / yesterday?</i></p>
+                        <div class="mt-2 p-3 bg-gray-50 rounded text-sm text-gray-800 border-l-4 border-emerald-500">
+                            <strong>Step-by-step Solution:</strong> Auxiliary "Did" + subject "you" + verb phrase "play baseball yesterday?". Answer: <strong>Did you play baseball yesterday?</strong>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-4 rounded-lg shadow border border-sky-200">
+                        <p class="font-semibold text-[#1269A8]">Example 8 (Grammar 2): Too much vs Too many.</p>
+                        <p class="text-sm text-gray-700 mt-1"><strong>Prompt:</strong> Complete: <i>I eat ______ junk food. (too much / too many)</i></p>
+                        <div class="mt-2 p-3 bg-gray-50 rounded text-sm text-gray-800 border-l-4 border-emerald-500">
+                            <strong>Step-by-step Solution:</strong> "Junk food" is an uncountable noun, so we use <strong>too much</strong>. Answer: <strong>too much</strong>.
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-4 rounded-lg shadow border border-sky-200">
+                        <p class="font-semibold text-[#1269A8]">Example 9 (Grammar 2): Countable noun quantifier.</p>
+                        <p class="text-sm text-gray-700 mt-1"><strong>Prompt:</strong> Complete: <i>I play ______ video games. (too much / too many)</i></p>
+                        <div class="mt-2 p-3 bg-gray-50 rounded text-sm text-gray-800 border-l-4 border-emerald-500">
+                            <strong>Step-by-step Solution:</strong> "Video games" is a plural countable noun, so we use <strong>too many</strong>. Answer: <strong>too many</strong>.
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-4 rounded-lg shadow border border-sky-200">
+                        <p class="font-semibold text-[#1269A8]">Example 10 (Grammar 2): Drink enough water.</p>
+                        <p class="text-sm text-gray-700 mt-1"><strong>Prompt:</strong> Complete: <i>I drink ______ water every day. (too / enough)</i></p>
+                        <div class="mt-2 p-3 bg-gray-50 rounded text-sm text-gray-800 border-l-4 border-emerald-500">
+                            <strong>Step-by-step Solution:</strong> "Water" is a noun, and adequate amount uses <strong>enough</strong>. Answer: <strong>enough</strong>.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LEVEL CATEGORY: ADVANCED -->
+                <div class="space-y-4 pt-4">
+                    <h3 class="text-lg font-bold text-[#54887D] border-b-2 border-[#54887D] pb-1">⭐⭐⭐ Advanced Level Examples (11 - 15)</h3>
+                    
+                    <div class="bg-white p-4 rounded-lg shadow border border-sky-200">
+                        <p class="font-semibold text-[#1269A8]">Example 11 (Grammar 1): Picture interpretation dialogue.</p>
+                        <p class="text-sm text-gray-700 mt-1"><strong>Prompt:</strong> Look at the park scene: <i>Did she throw the ball?</i></p>
+                        <div class="mt-2 p-3 bg-gray-50 rounded text-sm text-gray-800 border-l-4 border-emerald-500">
+                            <strong>Step-by-step Solution:</strong> Observing the image, the girl is holding and throwing a baseball. Affirmative short answer: <strong>Yes, she did.</strong>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-4 rounded-lg shadow border border-sky-200">
+                        <p class="font-semibold text-[#1269A8]">Example 12 (Grammar 1): Negative action analysis.</p>
+                        <p class="text-sm text-gray-700 mt-1"><strong>Prompt:</strong> Look at the park scene: <i>Did he catch the ball?</i></p>
+                        <div class="mt-2 p-3 bg-gray-50 rounded text-sm text-gray-800 border-l-4 border-emerald-500">
+                            <strong>Step-by-step Solution:</strong> The boy is holding a glove or missing the catch. Negative short answer: <strong>No, he didn't.</strong>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-4 rounded-lg shadow border border-sky-200">
+                        <p class="font-semibold text-[#1269A8]">Example 13 (Grammar 1): Plural question construction.</p>
+                        <p class="text-sm text-gray-700 mt-1"><strong>Prompt:</strong> Formulate and answer: <i>children / ride bikes to the park? (Negative)</i></p>
+                        <div class="mt-2 p-3 bg-gray-50 rounded text-sm text-gray-800 border-l-4 border-emerald-500">
+                            <strong>Step-by-step Solution:</strong> Question: <i>Did the children ride their bikes to the park?</i> Answer: <strong>No, they didn't.</strong>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-4 rounded-lg shadow border border-sky-200">
+                        <p class="font-semibold text-[#1269A8]">Example 14 (Grammar 2): Combining sleep habits.</p>
+                        <p class="text-sm text-gray-700 mt-1"><strong>Prompt:</strong> Complete with correct quantifier: <i>Do you get ______ sleep at night? (too much / enough)</i></p>
+                        <div class="mt-2 p-3 bg-gray-50 rounded text-sm text-gray-800 border-l-4 border-emerald-500">
+                            <strong>Step-by-step Solution:</strong> Healthy requirement for rest uses <strong>enough sleep</strong>. Answer: <strong>enough</strong>.
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-4 rounded-lg shadow border border-sky-200">
+                        <p class="font-semibold text-[#1269A8]">Example 15 (Grammar 2): Combining vegetables and health.</p>
+                        <p class="text-sm text-gray-700 mt-1"><strong>Prompt:</strong> Complete sentence: <i>I eat ______ vegetables every day to stay strong. (too many / enough)</i></p>
+                        <div class="mt-2 p-3 bg-gray-50 rounded text-sm text-gray-800 border-l-4 border-emerald-500">
+                            <strong>Step-by-step Solution:</strong> Eating a healthy, sufficient quantity of vegetables uses <strong>enough</strong>. Answer: <strong>enough</strong>.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TAB 3: EXERCISES -->
+            <section id="tab-exercises" class="tab-content hidden space-y-6">
+                <div class="bg-white p-6 rounded-xl shadow-md border-l-8 border-[#1269A8]">
+                    <h2 class="text-2xl font-bold text-[#1269A8] mb-2">Practical Exercises (15 Total with Hidden Solutions)</h2>
+                    <p class="text-gray-600 text-sm">Practice your grammar skills. Try solving each item first, then click "Show Solution" to check your work!</p>
+                </div>
+
+                <!-- EXERCISES CONTAINER -->
+                <div class="space-y-6">
+                    
+                    <!-- Basic Exercises (1-5) -->
+                    <h3 class="text-lg font-bold text-[#54887D] border-b-2 border-[#54887D] pb-1">✏️ Basic Exercises</h3>
+
+                    <!-- Exercise 1 -->
+                    <div class="bg-white p-5 rounded-xl shadow border border-sky-100">
+                        <p class="font-bold text-gray-800">1. Fill in the blank with <span class="text-[#1269A8]">Did</span> or <span class="text-[#1269A8]">didn't</span>:</p>
+                        <p class="text-sm text-gray-700 mt-2">______ you brush your knees? Yes, I ______.</p>
+                        <button onclick="toggleSol('ex1')" class="mt-3 px-3 py-1.5 bg-[#1269A8] text-white text-xs font-semibold rounded hover:bg-sky-700 transition">Show Solution</button>
+                        <div id="ex1" class="hidden mt-3 p-3 bg-emerald-50 text-emerald-900 rounded text-sm border-l-4 border-emerald-500">
+                            <strong>Solution:</strong> <b>Did</b> you brush your knees? Yes, I <b>did</b>.
+                        </div>
+                    </div>
+
+                    <!-- Exercise 2 -->
+                    <div class="bg-white p-5 rounded-xl shadow border border-sky-100">
+                        <p class="font-bold text-gray-800">2. Complete the short answer:</p>
+                        <p class="text-sm text-gray-700 mt-2">Did she play in the park? Yes, she ______.</p>
+                        <button onclick="toggleSol('ex2')" class="mt-3 px-3 py-1.5 bg-[#1269A8] text-white text-xs font-semibold rounded hover:bg-sky-700 transition">Show Solution</button>
+                        <div id="ex2" class="hidden mt-3 p-3 bg-emerald-50 text-emerald-900 rounded text-sm border-l-4 border-emerald-500">
+                            <strong>Solution:</strong> Yes, she <b>did</b>.
+                        </div>
+                    </div>
+
+                    <!-- Exercise 3 -->
+                    <div class="bg-white p-5 rounded-xl shadow border border-sky-100">
+                        <p class="font-bold text-gray-800">3. Complete the negative short answer:</p>
+                        <p class="text-sm text-gray-700 mt-2">Did you eat breakfast? No, I ______.</p>
+                        <button onclick="toggleSol('ex3')" class="mt-3 px-3 py-1.5 bg-[#1269A8] text-white text-xs font-semibold rounded hover:bg-sky-700 transition">Show Solution</button>
+                        <div id="ex3" class="hidden mt-3 p-3 bg-emerald-50 text-emerald-900 rounded text-sm border-l-4 border-emerald-500">
+                            <strong>Solution:</strong> No, I <b>didn't</b>.
+                        </div>
+                    </div>
+
+                    <!-- Exercise 4 -->
+                    <div class="bg-white p-5 rounded-xl shadow border border-sky-100">
+                        <p class="font-bold text-gray-800">4. Choose <span class="text-[#1269A8]">too</span> or <span class="text-[#1269A8]">enough</span>:</p>
+                        <p class="text-sm text-gray-700 mt-2">Don't stay up ______ late!</p>
+                        <button onclick="toggleSol('ex4')" class="mt-3 px-3 py-1.5 bg-[#1269A8] text-white text-xs font-semibold rounded hover:bg-sky-700 transition">Show Solution</button>
+                        <div id="ex4" class="hidden mt-3 p-3 bg-emerald-50 text-emerald-900 rounded text-sm border-l-4 border-emerald-500">
+                            <strong>Solution:</strong> <b>too</b> (too late).
+                        </div>
+                    </div>
+
+                    <!-- Exercise 5 -->
+                    <div class="bg-white p-5 rounded-xl shadow border border-sky-100">
+                        <p class="font-bold text-gray-800">5. Choose <span class="text-[#1269A8]">too</span> or <span class="text-[#1269A8]">enough</span>:</p>
+                        <p class="text-sm text-gray-700 mt-2">I get ______ exercise every day.</p>
+                        <button onclick="toggleSol('ex5')" class="mt-3 px-3 py-1.5 bg-[#1269A8] text-white text-xs font-semibold rounded hover:bg-sky-700 transition">Show Solution</button>
+                        <div id="ex5" class="hidden mt-3 p-3 bg-emerald-50 text-emerald-900 rounded text-sm border-l-4 border-emerald-500">
+                            <strong>Solution:</strong> <b>enough</b> (enough exercise).
+                        </div>
+                    </div>
+
+                    <!-- Intermediate Exercises (6-10) -->
+                    <h3 class="text-lg font-bold text-[#54887D] border-b-2 border-[#54887D] pt-4 pb-1">✏️ Intermediate Exercises</h3>
+
+                    <!-- Exercise 6 -->
+                    <div class="bg-white p-5 rounded-xl shadow border border-sky-100">
+                        <p class="font-bold text-gray-800">6. Write the correct question word and form:</p>
+                        <p class="text-sm text-gray-700 mt-2">______ he ______ his back? (No, he didn't.)</p>
+                        <button onclick="toggleSol('ex6')" class="mt-3 px-3 py-1.5 bg-[#1269A8] text-white text-xs font-semibold rounded hover:bg-sky-700 transition">Show Solution</button>
+                        <div id="ex6" class="hidden mt-3 p-3 bg-emerald-50 text-emerald-900 rounded text-sm border-l-4 border-emerald-500">
+                            <strong>Solution:</strong> <b>Did</b> he <b>hurt</b> (or <i>scratch</i> / <i>wash</i>) his back?
+                        </div>
+                    </div>
+
+                    <!-- Exercise 7 -->
+                    <div class="bg-white p-5 rounded-xl shadow border border-sky-100">
+                        <p class="font-bold text-gray-800">7. Match / Fill in the blank:</p>
+                        <p class="text-sm text-gray-700 mt-2">Did they do their homework? No, they ______.</p>
+                        <button onclick="toggleSol('ex7')" class="mt-3 px-3 py-1.5 bg-[#1269A8] text-white text-xs font-semibold rounded hover:bg-sky-700 transition">Show Solution</button>
+                        <div id="ex7" class="hidden mt-3 p-3 bg-emerald-50 text-emerald-900 rounded text-sm border-l-4 border-emerald-500">
+                            <strong>Solution:</strong> No, they <b>didn't</b>.
+                        </div>
+                    </div>
+
+                    <!-- Exercise 8 -->
+                    <div class="bg-white p-5 rounded-xl shadow border border-sky-100">
+                        <p class="font-bold text-gray-800">8. Choose <span class="text-[#1269A8]">too much</span> or <span class="text-[#1269A8]">too many</span>:</p>
+                        <p class="text-sm text-gray-700 mt-2">Don't watch ______ much TV!</p>
+                        <button onclick="toggleSol('ex8')" class="mt-3 px-3 py-1.5 bg-[#1269A8] text-white text-xs font-semibold rounded hover:bg-sky-700 transition">Show Solution</button>
+                        <div id="ex8" class="hidden mt-3 p-3 bg-emerald-50 text-emerald-900 rounded text-sm border-l-4 border-emerald-500">
+                            <strong>Solution:</strong> <b>too</b> (too much TV). Note: TV is uncountable here as screen time.
+                        </div>
+                    </div>
+
+                    <!-- Exercise 9 -->
+                    <div class="bg-white p-5 rounded-xl shadow border border-sky-100">
+                        <p class="font-bold text-gray-800">9. Choose <span class="text-[#1269A8]">too much</span> or <span class="text-[#1269A8]">too many</span>:</p>
+                        <p class="text-sm text-gray-700 mt-2">I drink ______ much soda.</p>
+                        <button onclick="toggleSol('ex9')" class="mt-3 px-3 py-1.5 bg-[#1269A8] text-white text-xs font-semibold rounded hover:bg-sky-700 transition">Show Solution</button>
+                        <div id="ex9" class="hidden mt-3 p-3 bg-emerald-50 text-emerald-900 rounded text-sm border-l-4 border-emerald-500">
+                            <strong>Solution:</strong> <b>too</b> (too much soda). Soda is uncountable.
+                        </div>
+                    </div>
+
+                    <!-- Exercise 10 -->
+                    <div class="bg-white p-5 rounded-xl shadow border border-sky-100">
+                        <p class="font-bold text-gray-800">10. Answer based on personal habit:</p>
+                        <p class="text-sm text-gray-700 mt-2">Do you eat enough fruit every day? (Write Yes or No)</p>
+                        <button onclick="toggleSol('ex10')" class="mt-3 px-3 py-1.5 bg-[#1269A8] text-white text-xs font-semibold rounded hover:bg-sky-700 transition">Show Solution</button>
+                        <div id="ex10" class="hidden mt-3 p-3 bg-emerald-50 text-emerald-900 rounded text-sm border-l-4 border-emerald-500">
+                            <strong>Solution:</strong> Sample answer: <b>Yes, I do.</b> (or <i>No, I don't.</i>)
+                        </div>
+                    </div>
+
+                    <!-- Advanced Exercises (11-15) -->
+                    <h3 class="text-lg font-bold text-[#54887D] border-b-2 border-[#54887D] pt-4 pb-1">✏️ Advanced Exercises</h3>
+
+                    <!-- Exercise 11 -->
+                    <div class="bg-white p-5 rounded-xl shadow border border-sky-100">
+                        <p class="font-bold text-gray-800">11. Construct a full question from prompts:</p>
+                        <p class="text-sm text-gray-700 mt-2">Prompts: <i>you / eat yogurt for breakfast?</i></p>
+                        <button onclick="toggleSol('ex11')" class="mt-3 px-3 py-1.5 bg-[#1269A8] text-white text-xs font-semibold rounded hover:bg-sky-700 transition">Show Solution</button>
+                        <div id="ex11" class="hidden mt-3 p-3 bg-emerald-50 text-emerald-900 rounded text-sm border-l-4 border-emerald-500">
+                            <strong>Solution:</strong> <b>Did you eat yogurt for breakfast?</b>
+                        </div>
+                    </div>
+
+                    <!-- Exercise 12 -->
+                    <div class="bg-white p-5 rounded-xl shadow border border-sky-100">
+                        <p class="font-bold text-gray-800">12. Picture analysis:</p>
+                        <p class="text-sm text-gray-700 mt-2">Did the children ride their bikes to the park? (Based on Our World 3 park scene)</p>
+                        <button onclick="toggleSol('ex12')" class="mt-3 px-3 py-1.5 bg-[#1269A8] text-white text-xs font-semibold rounded hover:bg-sky-700 transition">Show Solution</button>
+                        <div id="ex12" class="hidden mt-3 p-3 bg-emerald-50 text-emerald-900 rounded text-sm border-l-4 border-emerald-500">
+                            <strong>Solution:</strong> No, they didn't. (Skateboards are shown on the picnic blanket instead!).
+                        </div>
+                    </div>
+
+                    <!-- Exercise 13 -->
+                    <div class="bg-white p-5 rounded-xl shadow border border-sky-100">
+                        <p class="font-bold text-gray-800">13. Distinguish Quantifiers:</p>
+                        <p class="text-sm text-gray-700 mt-2">Why do we use <span class="text-[#1269A8]">too many</span> with video games and <span class="text-[#1269A8]">too much</span> with junk food?</p>
+                        <button onclick="toggleSol('ex13')" class="mt-3 px-3 py-1.5 bg-[#1269A8] text-white text-xs font-semibold rounded hover:bg-sky-700 transition">Show Solution</button>
+                        <div id="ex13" class="hidden mt-3 p-3 bg-emerald-50 text-emerald-900 rounded text-sm border-l-4 border-emerald-500">
+                            <strong>Solution:</strong> Because "video games" is countable (plural noun), while "junk food" is uncountable (mass noun).
+                        </div>
+                    </div>
+
+                    <!-- Exercise 14 -->
+                    <div class="bg-white p-5 rounded-xl shadow border border-sky-100">
+                        <p class="font-bold text-gray-800">14. Complete the health table:</p>
+                        <p class="text-sm text-gray-700 mt-2">Do you get enough sleep at night? Check Yes or No and write a sentence.</p>
+                        <button onclick="toggleSol('ex14')" class="mt-3 px-3 py-1.5 bg-[#1269A8] text-white text-xs font-semibold rounded hover:bg-sky-700 transition">Show Solution</button>
+                        <div id="ex14" class="hidden mt-3 p-3 bg-emerald-50 text-emerald-900 rounded text-sm border-l-4 border-emerald-500">
+                            <strong>Solution:</strong> <b>Yes, I do. I sleep 9 hours every night.</b> (or equivalent personal answer).
+                        </div>
+                    </div>
+
+                    <!-- Exercise 15 -->
+                    <div class="bg-white p-5 rounded-xl shadow border border-sky-100">
+                        <p class="font-bold text-gray-800">15. Transform affirmative to question:</p>
+                        <p class="text-sm text-gray-700 mt-2">Transform: "He played soccer yesterday" into a Yes/No past question.</p>
+                        <button onclick="toggleSol('ex15')" class="mt-3 px-3 py-1.5 bg-[#1269A8] text-white text-xs font-semibold rounded hover:bg-sky-700 transition">Show Solution</button>
+                        <div id="ex15" class="hidden mt-3 p-3 bg-emerald-50 text-emerald-900 rounded text-sm border-l-4 border-emerald-500">
+                            <strong>Solution:</strong> <b>Did he play soccer yesterday?</b> (Note: "played" changes back to base verb "play" after "Did").
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- TAB 4: CRITICAL REFLECTION -->
+            <section id="tab-reflection" class="tab-content hidden space-y-6">
+                <div class="bg-white p-6 rounded-xl shadow-md border-l-8 border-[#54887D]">
+                    <h2 class="text-2xl font-bold text-[#1269A8] mb-2">Critical Reflection & Logical Thinking</h2>
+                    <p class="text-gray-600 text-sm">Discuss these open-ended questions with your teacher or classmates to deepen your understanding of English grammar and healthy habits.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-white p-6 rounded-xl shadow border border-sky-200">
+                        <h3 class="font-bold text-[#1269A8] text-lg mb-2">🤔 Question 1: Past Actions & Memory</h3>
+                        <p class="text-gray-700 text-sm leading-relaxed">
+                            Why is it important to use the auxiliary verb <strong>Did</strong> at the beginning of a question instead of changing the main verb into the past tense (like <i>played</i> or <i>ate</i>)? How does this help us ask questions clearly?
+                        </p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl shadow border border-sky-200">
+                        <h3 class="font-bold text-[#1269A8] text-lg mb-2">🤔 Question 2: Balance in Daily Life</h3>
+                        <p class="text-gray-700 text-sm leading-relaxed">
+                            We learned about <strong>too much</strong>, <strong>too many</strong>, and <strong>enough</strong>. Why is having a balance in what we eat and the activities we do crucial for our body and mind at Colegio Montano?
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TAB 5: FORMATIVE QUIZ -->
+            <section id="tab-evaluation" class="tab-content hidden space-y-6">
+                <div class="bg-white p-6 rounded-xl shadow-md border-l-8 border-[#F7D615]">
+                    <h2 class="text-2xl font-bold text-[#1269A8] mb-2">Formative Quiz with Hidden Solutions</h2>
+                    <p class="text-gray-600 text-sm">Test what you've learned in Unit 3! Check your answers below each challenge.</p>
+                </div>
+
+                <div class="space-y-4">
+                    <!-- Quiz Item 1 -->
+                    <div class="bg-white p-5 rounded-xl shadow border border-sky-100">
+                        <p class="font-bold text-gray-800">Quiz 1: Choose the correct past question structure.</p>
+                        <p class="text-sm text-gray-700 mt-2">A) Did you played football?<br>B) Did you play football?</p>
+                        <button onclick="toggleSol('q1')" class="mt-3 px-3 py-1.5 bg-[#1269A8] text-white text-xs font-semibold rounded hover:bg-sky-700 transition">Show Solution</button>
+                        <div id="q1" class="hidden mt-3 p-3 bg-sky-50 text-sky-900 rounded text-sm border-l-4 border-sky-500">
+                            <strong>Correct Answer:</strong> <b>B) Did you play football?</b> (Because "Did" already shows past tense, the main verb stays in its base form).
+                        </div>
+                    </div>
+
+                    <!-- Quiz Item 2 -->
+                    <div class="bg-white p-5 rounded-xl shadow border border-sky-100">
+                        <p class="font-bold text-gray-800">Quiz 2: Select the right quantifier for hours.</p>
+                        <p class="text-sm text-gray-700 mt-2">I work too ______ hours. (much / many)</p>
+                        <button onclick="toggleSol('q2')" class="mt-3 px-3 py-1.5 bg-[#1269A8] text-white text-xs font-semibold rounded hover:bg-sky-700 transition">Show Solution</button>
+                        <div id="q2" class="hidden mt-3 p-3 bg-sky-50 text-sky-900 rounded text-sm border-l-4 border-sky-500">
+                            <strong>Correct Answer:</strong> <b>too many</b> (Hours are countable plural nouns).
+                        </div>
+                    </div>
+
+                    <!-- Quiz Item 3 -->
+                    <div class="bg-white p-5 rounded-xl shadow border border-sky-100">
+                        <p class="font-bold text-gray-800">Quiz 3: Complete the negative short answer.</p>
+                        <p class="text-sm text-gray-700 mt-2">Did they walk to school? No, they ______.</p>
+                        <button onclick="toggleSol('q3')" class="mt-3 px-3 py-1.5 bg-[#1269A8] text-white text-xs font-semibold rounded hover:bg-sky-700 transition">Show Solution</button>
+                        <div id="q3" class="hidden mt-3 p-3 bg-sky-50 text-sky-900 rounded text-sm border-l-4 border-sky-500">
+                            <strong>Correct Answer:</strong> <b>didn't</b>.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Whiteboard Footer -->
+        <footer class="bg-gray-100 px-6 py-3 border-t border-gray-200 text-center text-xs text-gray-500">
+            Colegio Montano • Educational Web Development • Our World 3 (NatGeo) Unit 3 Study Guide
+        </footer>
+    </div>
+
+    <!-- JavaScript for Interactivity -->
+    <script>
+        // Tab switching logic
+        function switchTab(tabId) {
+            // Hide all tab contents
+            const tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(tab => tab.classList.add('hidden'));
+
+            // Remove active style from all tab buttons
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-white', 'text-sky-900', 'shadow');
+                btn.classList.add('text-white', 'hover:bg-sky-800');
+            });
+
+            // Show selected tab content
+            document.getElementById('tab-' + tabId).classList.remove('hidden');
+
+            // Style active button
+            const activeBtn = document.getElementById('btn-' + tabId);
+            activeBtn.classList.remove('text-white', 'hover:bg-sky-800');
+            activeBtn.classList.add('bg-white', 'text-sky-900', 'shadow');
+        }
+
+        // Toggle solution visibility
+        function toggleSol(id) {
+            const el = document.getElementById(id);
+            if (el.classList.contains('hidden')) {
+                el.classList.remove('hidden');
+            } else {
+                el.classList.add('hidden');
+            }
+        }
+
+        // Fullscreen API toggle
+        function toggleFullScreen() {
+            const elem = document.getElementById('whiteboardContainer');
+            if (!document.fullscreenElement) {
+                if (elem.requestFullscreen) {
+                    elem.requestFullscreen();
+                } else if (elem.webkitRequestFullscreen) { /* Safari */
+                    elem.webkitRequestFullscreen();
+                } else if (elem.msRequestFullscreen) { /* IE11 */
+                    elem.msRequestFullscreen();
+                }
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                } else if (document.webkitExitFullscreen) { /* Safari */
+                    document.webkitExitFullscreen();
+                } else if (document.msExitFullscreen) { /* IE11 */
+                    document.msExitFullscreen();
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>
